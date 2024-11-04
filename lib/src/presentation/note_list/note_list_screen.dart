@@ -1,12 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:vocap/core/constants/app_colors.dart';
-import 'package:vocap/core/constants/app_fonts.dart';
-import 'package:vocap/core/constants/dimens.dart';
-import 'package:vocap/core/presentation/note_details/note_detail_screen.dart';
-
-import '../../constants/app_images.dart';
+import 'package:vocap/src/core/app_colors.dart';
+import 'package:vocap/src/core/app_fonts.dart';
+import 'package:vocap/src/core/dimens.dart';
+import 'package:vocap/src/routes/app_route_data.dart';
 
 class NoteListScreen extends StatefulWidget {
   const NoteListScreen({super.key});
@@ -52,7 +50,7 @@ class _NoteListScreenState extends State<NoteListScreen> {
                     child: InkWell(
                       borderRadius: BorderRadius.circular(kMarginMedium_2),
                       onTap: (){
-                        Navigator.push(context,  MaterialPageRoute(builder: (context) => NoteDetailScreen()));
+                        NoteDetailRoute().push(context);
                       },
                       child: Padding(
                         padding: const EdgeInsets.symmetric(

@@ -8,7 +8,8 @@ const colorGrey = Color(0xFF272635);
 const colorPrimaryText = Color(0xFFCECED1);
 const colorSecondaryText = Color(0xFF8F8E95);
 const colorWhite = Color(0xFFFFFFFF);
-
+const colorBlue = Color(0xFF1877F2);
+const colorRed = Color(0xFFD11A2A);
 
 class AppColors {
   final Color colorPrimary;
@@ -19,15 +20,21 @@ class AppColors {
   final Color colorPrimaryText;
   final Color colorSecondaryText;
   final Color colorWhite;
+  final Color colorBlue;
+  final Color colorRed;
 
-  AppColors(this.colorPrimary,
-      this.colorSecondary,
-      this.colorYellow,
-      this.colorAccent,
-      this.colorGrey,
-      this.colorPrimaryText,
-      this.colorSecondaryText,
-      this.colorWhite,);
+  AppColors(
+    this.colorPrimary,
+    this.colorSecondary,
+    this.colorYellow,
+    this.colorAccent,
+    this.colorGrey,
+    this.colorPrimaryText,
+    this.colorSecondaryText,
+    this.colorWhite,
+    this.colorBlue,
+    this.colorRed,
+  );
 }
 
 final _appColorLight = AppColors(
@@ -39,6 +46,8 @@ final _appColorLight = AppColors(
   colorPrimaryText,
   colorSecondaryText,
   colorWhite,
+  colorBlue,
+  colorRed,
 );
 final _appColorDark = AppColors(
   colorPrimary,
@@ -49,6 +58,8 @@ final _appColorDark = AppColors(
   colorPrimaryText,
   colorSecondaryText,
   colorWhite,
+  colorBlue,
+  colorRed,
 );
 
 extension AppTheme on ThemeData {
@@ -57,14 +68,7 @@ extension AppTheme on ThemeData {
 }
 
 extension ContextThemeExtension on BuildContext {
-  bool get isLightTheme =>
-      Theme
-          .of(this)
-          .brightness == Brightness.light;
+  bool get isLightTheme => Theme.of(this).brightness == Brightness.light;
 
-  AppColors get appColors =>
-      Theme
-          .of(this)
-          .appColors;
+  AppColors get appColors => Theme.of(this).appColors;
 }
-

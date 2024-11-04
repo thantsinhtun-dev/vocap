@@ -1,11 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:touchable_opacity/touchable_opacity.dart';
-import 'package:vocap/core/constants/app_colors.dart';
-import 'package:vocap/core/constants/app_fonts.dart';
-import 'package:vocap/core/presentation/create_note/create_note_screen.dart';
+import 'package:vocap/src/core/app_colors.dart';
+import 'package:vocap/src/core/app_fonts.dart';
 
-import '../../constants/dimens.dart';
+import '../../../src/core/dimens.dart';
+import '../create_note/create_note_screen.dart';
 
 class ChooseFolderScreen extends StatelessWidget {
   const ChooseFolderScreen({super.key});

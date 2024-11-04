@@ -1,12 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:vocap/core/constants/app_colors.dart';
-import 'package:vocap/core/constants/app_fonts.dart';
-import 'package:vocap/core/constants/app_images.dart';
-import 'package:vocap/core/constants/app_strings.dart';
+import 'package:vocap/src/core/app_colors.dart';
+import 'package:vocap/src/core/app_fonts.dart';
+import 'package:vocap/src/core/app_images.dart';
+import 'package:vocap/src/core/app_strings.dart';
+import 'package:vocap/src/routes/app_route_data.dart';
 
-import '../create_note/create_note_screen.dart';
 import '../folder/folder_screen.dart';
 import '../note_list/note_list_screen.dart';
 
@@ -44,10 +44,7 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
         duration: const Duration(milliseconds: 100),
         child: FloatingActionButton(
           onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => CreateNoteScreen()),
-            );
+            CreateNoteRoute().push(context);
           },
           backgroundColor: context.appColors.colorAccent,
           foregroundColor: context.appColors.colorWhite,
@@ -68,12 +65,16 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
         ),
         actions: [
           IconButton(
-            onPressed: () {},
-            icon: const ImageIcon(AssetImage(AppImages.imgSearch)),
+            onPressed: () {
+              SearchRoute().push(context);
+            },
+            icon: const ImageIcon(AssetImage(AppImages.imgSearch),color: Colors.white),
           ),
           IconButton(
-            onPressed: () {},
-            icon: const ImageIcon(AssetImage(AppImages.imgDots)),
+            onPressed: () {
+             ProfileRoute().push(context);
+            },
+            icon:  const ImageIcon(AssetImage(AppImages.imgProfile),color: Colors.white70,),
           )
         ],
         bottom: TabBar(

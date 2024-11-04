@@ -8,6 +8,11 @@ class AppImages {
   static const imgFolder = '$_imagePath/ic_folder.png';
   static const imgSearch = '$_imagePath/ic_search.png';
   static const imgEdit = '$_imagePath/ic_edit.png';
-
+  static const imgProfile = '$_imagePath/ic_user.png';
+  static const logoFB = '$_imagePath/logo_fb.png';
+  static const logoGoogle = '$_imagePath/logo_google.png';
+  static const logoApple = '$_imagePath/logo_apple.png';
 
 }
+
+

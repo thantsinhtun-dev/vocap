@@ -1,12 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:vocap/core/constants/app_colors.dart';
-import 'package:vocap/core/constants/app_fonts.dart';
-import 'package:vocap/core/constants/app_images.dart';
-import 'package:vocap/core/constants/dimens.dart';
-import 'package:vocap/core/presentation/create_note/create_note_screen.dart';
-import 'package:vocap/core/presentation/folder_detail/folder_detail_screen.dart';
+import 'package:vocap/src/core/app_colors.dart';
+import 'package:vocap/src/core/app_fonts.dart';
+import 'package:vocap/src/core/app_images.dart';
+import 'package:vocap/src/core/dimens.dart';
+import 'package:vocap/src/routes/app_route_data.dart';
+
+import '../folder_detail/folder_detail_screen.dart';
 
 class FolderScreen extends StatefulWidget {
   const FolderScreen({super.key, required this.scrollController});
@@ -73,8 +74,7 @@ class _FolderScreenState extends State<FolderScreen> {
                   child: InkWell(
                     borderRadius: BorderRadius.circular(kMarginLarge),
                     onTap: (){
-                      Navigator.push(context,  MaterialPageRoute(builder: (context) => FolderDetailScreen()));
-
+                      FolderDetailRoute().push(context);
                     },
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.center,

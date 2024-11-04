@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:vocap/core/constants/app_colors.dart';
+import 'package:vocap/src/core/app_colors.dart';
 
 enum FontFamily {
   poppins('Poppins'),

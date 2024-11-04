@@ -1,11 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:vocap/core/constants/app_colors.dart';
-import 'package:vocap/core/constants/app_fonts.dart';
-import 'package:vocap/core/constants/dimens.dart';
+import 'package:vocap/src/core/app_colors.dart';
+import 'package:vocap/src/core/app_fonts.dart';
+import 'package:vocap/src/core/dimens.dart';
 
-import '../../constants/app_images.dart';
-import '../../constants/app_strings.dart';
+import '../../../src/core/app_images.dart';
+import '../../../src/core/app_strings.dart';
 
 class NoteDetailScreen extends StatelessWidget {
   const NoteDetailScreen({super.key});

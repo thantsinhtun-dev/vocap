@@ -1,10 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:touchable_opacity/touchable_opacity.dart';
-import 'package:vocap/core/constants/app_colors.dart';
-import 'package:vocap/core/constants/app_fonts.dart';
-import 'package:vocap/core/constants/dimens.dart';
-import 'package:vocap/core/presentation/choose_folder/choose_folder_screen.dart';
+import 'package:vocap/src/core/app_colors.dart';
+import 'package:vocap/src/core/app_fonts.dart';
+import 'package:vocap/src/core/dimens.dart';
+
+import '../choose_folder/choose_folder_screen.dart';
 
 class CreateNoteScreen extends StatelessWidget {
   const CreateNoteScreen({super.key});
@@ -42,34 +43,30 @@ class CreateNoteScreen extends StatelessWidget {
           ),
         ],
       ),
-      body: const SafeArea(
-        top: false,
-        bottom: true,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            CustomTextField(
-              hintText: "Vocap Title",
-              padding: EdgeInsets.symmetric(horizontal: kMarginMedium_2),
-              borderRadius: kMarginMedium,
-            ),
-            SizedBox(height: kMarginMedium_2),
-            CustomTextField(
-              hintText: 'Category',
-              padding: EdgeInsets.symmetric(horizontal: kMarginMedium_2),
-              borderRadius: kMarginMedium,
-            ),
-            SizedBox(height: kMarginMedium_2),
-            CustomTextAreaField(
-              hintText: 'Enter your description',
-              padding: EdgeInsets.symmetric(horizontal: kMarginMedium_2),
-              borderRadius: kMarginMedium,
-            ),
-            Spacer(),
-            Center(child: Text("23 March 2024 "))
-          ],
-        ),
+      body:  ListView(
+        physics: const PageScrollPhysics(),
+        children: const [
+          CustomTextField(
+            hintText: "Vocap Title",
+            padding: EdgeInsets.symmetric(horizontal: kMarginMedium_2),
+            borderRadius: kMarginMedium,
+          ),
+          SizedBox(height: kMarginMedium_2),
+          CustomTextField(
+            hintText: 'Category',
+            padding: EdgeInsets.symmetric(horizontal: kMarginMedium_2),
+            borderRadius: kMarginMedium,
+          ),
+          SizedBox(height: kMarginMedium_2),
+          CustomTextAreaField(
+            hintText: 'Enter your description',
+            padding: EdgeInsets.symmetric(horizontal: kMarginMedium_2),
+            borderRadius: kMarginMedium,
+          ),
+        ],
       ),
+      bottomNavigationBar:             SafeArea(child: Text("23 March 2024 ",textAlign: TextAlign.center,))
+      ,
     );
   }
 }
@@ -92,6 +89,9 @@ class CustomTextField extends StatelessWidget {
       padding: padding,
       child: TextField(
         cursorColor: context.appColors.colorWhite,
+        onTapOutside: (_){
+          FocusScope.of(context).unfocus();
+        },
         decoration: InputDecoration(
           border: OutlineInputBorder(
             borderRadius: BorderRadius.all(
@@ -137,7 +137,16 @@ class CustomTextAreaField extends StatelessWidget {
       padding: padding,
       child: TextField(
         cursorColor: context.appColors.colorWhite,
-        maxLines: 15,
+        minLines: 10,
+        maxLines: null,
+        keyboardType: TextInputType.multiline,
+        showCursor: true,
+        textInputAction: TextInputAction.unspecified,
+
+        // textInputAction: TextInputAction.,
+        onTapOutside: (_){
+          FocusScope.of(context).unfocus();
+        },
         decoration: InputDecoration(
           border: OutlineInputBorder(
             borderRadius: BorderRadius.all(
