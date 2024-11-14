@@ -1,0 +1,35 @@
+app:
+  android:
+    flavorDimensions: "flavor-type"
+
+flavors:
+  dev:
+    app:
+      name: "Vocap Dev"
+
+    android:
+      applicationId: "com.stone.vocap.dev"
+      firebase:
+        config: ".firebase/dev/google-services.json"
+
+    ios:
+      bundleId: "com.stone.vocap.dev"
+      firebase:
+        config: ".firebase/dev/GoogleService-Info.plist"
+
+  prod:
+    app:
+      name: "Vocap"
+
+    android:
+      applicationId: "com.stone.vocap"
+      firebase:
+        config: ".firebase/prod/google-services.json"
+
+    ios:
+      bundleId: "com.stone.vocap"
+      firebase:
+        config: ".firebase/prod/GoogleService-Info.plist"
+
+ide: idea
+  

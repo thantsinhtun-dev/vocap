@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "987014562468",
+    "firebase_url": "https://vocap-dev-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "vocap-dev",
+    "storage_bucket": "vocap-dev.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:987014562468:android:1565440af05ac3de699c31",
+        "android_client_info": {
+          "package_name": "com.stone.vocap.dev"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "987014562468-or7qga9ra8nihkvjn4e3up8aooaeqj3m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAxz8bNW2aKI6YTMNPVS7-WeiVIXUUgyoA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "987014562468-or7qga9ra8nihkvjn4e3up8aooaeqj3m.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "987014562468-vq39rml147pn5p9uhm7u28g6l9lj4pur.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.stone.vocap.dev"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

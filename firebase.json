@@ -1,0 +1,74 @@
+{
+  "flutter": {
+    "platforms": {
+      "android": {
+        "targets": {
+          "dev": {
+            "projectId": "vocap-dev",
+            "appId": "1:987014562468:android:1565440af05ac3de699c31",
+            "fileOutput": "android/app/google-services.json"
+          },
+          "prod": {
+            "projectId": "vocap-fb634",
+            "appId": "1:762826055064:android:e7f35252e265a64fabdfed",
+            "fileOutput": "android/app/google-services.json"
+          }
+        }
+      },
+      "ios": {
+        "targets": {
+          "dev": {
+            "projectId": "vocap-dev",
+            "appId": "1:987014562468:ios:32b9f0719eb4cbc1699c31",
+            "uploadDebugSymbols": true,
+            "fileOutput": "ios/Runner/GoogleService-Info.plist"
+          },
+          "prod": {
+            "projectId": "vocap-fb634",
+            "appId": "1:762826055064:ios:40a549e3faabf596abdfed",
+            "uploadDebugSymbols": true,
+            "fileOutput": "ios/Runner/GoogleService-Info.plist"
+          }
+        }
+      },
+      "macos": {
+        "targets": {
+          "dev": {
+            "projectId": "vocap-dev",
+            "appId": "1:987014562468:ios:b3a83cc33ff0e9ca699c31",
+            "uploadDebugSymbols": true,
+            "fileOutput": "macos/Runner/GoogleService-Info.plist"
+          },
+          "prod": {
+            "projectId": "vocap-fb634",
+            "appId": "1:762826055064:ios:40a549e3faabf596abdfed",
+            "uploadDebugSymbols": true,
+            "fileOutput": "macos/Runner/GoogleService-Info.plist"
+          }
+        }
+      },
+      "dart": {
+        "lib/firebase/firebase_options_dev.dart": {
+          "projectId": "vocap-dev",
+          "configurations": {
+            "android": "1:987014562468:android:1565440af05ac3de699c31",
+            "ios": "1:987014562468:ios:32b9f0719eb4cbc1699c31",
+            "macos": "1:987014562468:ios:b3a83cc33ff0e9ca699c31",
+            "web": "1:987014562468:web:6764f8d2ad435144699c31",
+            "windows": "1:987014562468:web:12c5dc1384d5e07f699c31"
+          }
+        },
+        "lib/firebase/firebase_options_prod.dart": {
+          "projectId": "vocap-fb634",
+          "configurations": {
+            "android": "1:762826055064:android:e7f35252e265a64fabdfed",
+            "ios": "1:762826055064:ios:40a549e3faabf596abdfed",
+            "macos": "1:762826055064:ios:40a549e3faabf596abdfed",
+            "web": "1:762826055064:web:9b160a0299d21c94abdfed",
+            "windows": "1:762826055064:web:ef2b8082df8fd6c8abdfed"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,5 +1,7 @@
 import UIKit
 import Flutter
+import Firebase
+
 
 @main
 @objc class AppDelegate: FlutterAppDelegate {
