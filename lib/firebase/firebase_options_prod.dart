@@ -92,4 +92,5 @@ class DefaultFirebaseOptions {
     storageBucket: 'vocap-fb634.firebasestorage.app',
     measurementId: 'G-79S5JS9DHZ',
   );
+
 }

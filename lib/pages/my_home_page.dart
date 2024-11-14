@@ -8,10 +8,18 @@ class MyHomePage extends StatelessWidget {
       appBar: AppBar(
         title: Text(F.title),
       ),
-      body: Center(
-        child: Text(
-          'Hello ${F.title}',
-        ),
+      body: Column(
+        children: [
+          Center(
+            child: Text(
+              'Hello ${F.title}',
+            ),
+          ),
+          TextButton(
+            onPressed: () => throw Exception(),
+            child: const Text("Throw Test Exception"),
+          ),
+        ],
       ),
     );
   }

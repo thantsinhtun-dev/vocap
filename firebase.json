@@ -13,6 +13,18 @@
             "appId": "1:762826055064:android:e7f35252e265a64fabdfed",
             "fileOutput": "android/app/google-services.json"
           }
+        },
+        "buildConfigurations": {
+          "src/dev": {
+            "projectId": "vocap-dev",
+            "appId": "1:987014562468:android:1565440af05ac3de699c31",
+            "fileOutput": "android/app/src/dev/google-services.json"
+          },
+          "src/prod": {
+            "projectId": "vocap-fb634",
+            "appId": "1:762826055064:android:e7f35252e265a64fabdfed",
+            "fileOutput": "android/app/src/prod/google-services.json"
+          }
         }
       },
       "ios": {
@@ -28,6 +40,20 @@
             "appId": "1:762826055064:ios:40a549e3faabf596abdfed",
             "uploadDebugSymbols": true,
             "fileOutput": "ios/Runner/GoogleService-Info.plist"
+          }
+        },
+        "buildConfigurations": {
+          "Debug-dev": {
+            "projectId": "vocap-dev",
+            "appId": "1:987014562468:ios:32b9f0719eb4cbc1699c31",
+            "uploadDebugSymbols": true,
+            "fileOutput": "ios/Runner/dev/GoogleService-Info.plist"
+          },
+          "Debug-prod": {
+            "projectId": "vocap-fb634",
+            "appId": "1:762826055064:ios:40a549e3faabf596abdfed",
+            "uploadDebugSymbols": true,
+            "fileOutput": "ios/Runner/prod/GoogleService-Info.plist"
           }
         }
       },
@@ -45,6 +71,12 @@
             "uploadDebugSymbols": true,
             "fileOutput": "macos/Runner/GoogleService-Info.plist"
           }
+        },
+        "default": {
+          "projectId": "vocap-fb634",
+          "appId": "1:762826055064:ios:40a549e3faabf596abdfed",
+          "uploadDebugSymbols": true,
+          "fileOutput": "macos/Runner/GoogleService-Info.plist"
         }
       },
       "dart": {

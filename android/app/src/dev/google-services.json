@@ -32,10 +32,10 @@
               "client_type": 3
             },
             {
-              "client_id": "987014562468-vq39rml147pn5p9uhm7u28g6l9lj4pur.apps.googleusercontent.com",
+              "client_id": "987014562468-20o5i09p81oh2bfhe1ah8csmlt5qstt6.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.stone.vocap.dev"
+                "bundle_id": "com.stone.vocap"
               }
             }
           ]
