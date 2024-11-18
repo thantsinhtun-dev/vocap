@@ -8,7 +8,7 @@ import 'package:vocap/src/core/app_fonts.dart';
 import 'package:vocap/src/routes/app_route.dart';
 import 'package:vocap/src/routes/app_route_data.dart';
 
-import '../login/login_screen.dart';
+import '../login/screens/login_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});

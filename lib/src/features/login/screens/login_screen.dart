@@ -1,24 +1,24 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:lottie/lottie.dart';
 import 'package:vocap/src/core/app_colors.dart';
 import 'package:vocap/src/core/app_fonts.dart';
 import 'package:vocap/src/core/app_images.dart';
-import 'package:vocap/src/core/app_strings.dart';
 import 'package:vocap/src/core/dimens.dart';
 import 'package:vocap/src/routes/app_route_data.dart';
 
-import '../../../src/core/app_animation.dart';
+import '../../../core/app_animation.dart';
+import '../provider/auth_provider.dart';
 
-class LoginScreen extends StatelessWidget {
+class LoginScreen extends ConsumerWidget {
   const LoginScreen({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context,WidgetRef ref) {
     return Scaffold(
       body: SafeArea(
         child: Column(
-          // physics: const NeverScrollableScrollPhysics(),
           children: [
             Lottie.asset(AppAnimation.aniTest, height: 250),
             Text(
@@ -30,7 +30,7 @@ class LoginScreen extends StatelessWidget {
               ),
               textAlign: TextAlign.center,
             ),
-            Spacer(),
+            const Spacer(),
             SocialLoginButton(
               title: 'Continue with Google',
               titleColor: context.appColors.colorSecondaryText,
@@ -46,16 +46,12 @@ class LoginScreen extends StatelessWidget {
               titleColor: context.appColors.colorWhite,
               bgColor: context.appColors.colorBlue,
               logo: AppImages.logoFB,
-              onPressed: () {},
+              onPressed: () {
+                 final authController = ref.read(authControllerProvider.notifier);
+                 authController.googleLogin();
+              },
             ),
-            const SizedBox(height: kMarginMedium),
-            SocialLoginButton(
-              title: 'Continue with Apple',
-              titleColor: context.appColors.colorWhite,
-              bgColor: context.appColors.colorGrey,
-              logo: AppImages.logoApple,
-              onPressed: () {},
-            )
+            const SizedBox(height: kMarginExtraLarge),
           ],
         ),
       ),

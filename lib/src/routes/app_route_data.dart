@@ -1,14 +1,15 @@
 import 'package:flutter/cupertino.dart';
 import 'package:go_router/go_router.dart';
-import 'package:vocap/src/presentation/create_note/create_note_screen.dart';
-import 'package:vocap/src/presentation/folder_detail/folder_detail_screen.dart';
-import 'package:vocap/src/presentation/home/home_screen.dart';
-import 'package:vocap/src/presentation/login/login_screen.dart';
-import 'package:vocap/src/presentation/note_details/note_detail_screen.dart';
-import 'package:vocap/src/presentation/note_list/note_list_screen.dart';
-import 'package:vocap/src/presentation/profile/profile_screen.dart';
-import 'package:vocap/src/presentation/search_vocap/search_vocap_screen.dart';
-import 'package:vocap/src/presentation/splash/splash_screen.dart';
+
+import '../features/create_note/create_note_screen.dart';
+import '../features/folder_detail/folder_detail_screen.dart';
+import '../features/home/home_screen.dart';
+import '../features/login/screens/login_screen.dart';
+import '../features/note_details/note_detail_screen.dart';
+import '../features/note_list/note_list_screen.dart';
+import '../features/profile/profile_screen.dart';
+import '../features/search_vocap/search_vocap_screen.dart';
+import '../features/splash/splash_screen.dart';
 part 'app_route_data.g.dart';
 @TypedGoRoute<SplashRoute>(
   path: '/',
