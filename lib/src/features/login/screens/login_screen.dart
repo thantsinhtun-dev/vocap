@@ -37,7 +37,8 @@ class LoginScreen extends ConsumerWidget {
               bgColor: context.appColors.colorWhite,
               logo: AppImages.logoGoogle,
               onPressed: ()  {
-                 HomeRoute().go(context);
+                final authController = ref.read(authControllerProvider.notifier);
+                authController.googleLogin();
               },
             ),
             const SizedBox(height: kMarginMedium),
@@ -48,7 +49,7 @@ class LoginScreen extends ConsumerWidget {
               logo: AppImages.logoFB,
               onPressed: () {
                  final authController = ref.read(authControllerProvider.notifier);
-                 authController.googleLogin();
+                 authController.facebookLogin();
               },
             ),
             const SizedBox(height: kMarginExtraLarge),

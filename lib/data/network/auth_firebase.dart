@@ -9,4 +9,5 @@ AuthFirebase authFirebase(Ref ref) => AuthFirebaseImpl();
 
 abstract class AuthFirebase  {
   Future<UserCredential> googleLogin();
+  Future<UserCredential> facebookLogin();
 }

@@ -30,4 +30,21 @@ class AuthRepositoryImpl extends AuthRepository {
     }
   }
 
+  @override
+  ResultFuture<UserEntity> facebookLogin() async {
+    try {
+      var user = await _authRemoteDataSource.facebookLogin();
+      return Right(UserEntity(
+        name: user.user?.displayName ?? "",
+        email: user.user?.email ?? "",
+        image: user.user?.photoURL ?? "",
+        phoneNumber: user.user?.phoneNumber ?? "",
+        uid: user.user?.uid ?? "",
+        token: user.credential?.accessToken ?? "",
+      ),);
+    } on Exception catch (e) {
+      return Left(ErrorHandler.otherException(e));
+    }
+  }
+
 }

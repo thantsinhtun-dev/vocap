@@ -16,4 +16,6 @@ AuthRepository authRepository(Ref ref) {
 }
 abstract class AuthRepository {
   ResultFuture<UserEntity> googleLogin();
+  ResultFuture<UserEntity> facebookLogin();
+
 }

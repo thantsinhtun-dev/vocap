@@ -12,4 +12,9 @@ class AuthRemoteDataSourceImpl extends AuthRemoteDataSource {
     return _authFirebase.googleLogin();
   }
 
+  @override
+  Future<UserCredential> facebookLogin() {
+    return _authFirebase.facebookLogin();
+  }
+
 }

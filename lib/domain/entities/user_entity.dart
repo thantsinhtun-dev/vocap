@@ -14,4 +14,10 @@ class UserEntity {
     required this.uid,
     required this.token,
   });
+
+
+  @override
+  String toString() {
+    return "name : ${name} , email : ${email}, image : ${image}, phoneNumber : ${phoneNumber}, uid : ${uid}, token : ${token}";
+  }
 }

@@ -14,4 +14,6 @@ AuthRemoteDataSource authRemoteDataSource(Ref ref) {
 
 abstract class AuthRemoteDataSource {
   Future<UserCredential> googleLogin();
+  Future<UserCredential> facebookLogin();
+
 }

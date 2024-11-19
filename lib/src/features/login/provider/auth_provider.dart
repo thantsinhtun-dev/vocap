@@ -17,11 +17,17 @@ class AuthController extends _$AuthController {
   }
 
   Future<void> googleLogin() async {
-    print("google Login");
     var result = await _authRepository.googleLogin();
     result.match(
       (error) => Logger.log(functionName: "login fail",msg: error.getErrorMessage()),
-      (success) => Logger.log(msg: "success"),
+      (success) => Logger.log(msg: "success ${success.toString()}"),
+    );
+  }
+  Future<void> facebookLogin() async {
+    var result = await _authRepository.facebookLogin();
+    result.match(
+          (error) => Logger.log(functionName: "login fail",msg: error.getErrorMessage()),
+          (success) => Logger.log(msg: "success ${success.toString()}"),
     );
   }
 }
