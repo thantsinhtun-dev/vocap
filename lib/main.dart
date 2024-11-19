@@ -1,11 +1,13 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:vocap/data/persistance/preferences.dart';
 import 'package:vocap/src/core/app_themes.dart';
 import 'package:vocap/src/core/flavors.dart';
 import 'package:vocap/src/routes/app_route.dart';
 
 FutureOr<void> main() async {
+  await AppPreferences().initPreferences();
   runApp(const ProviderScope(child: MyApp()));
 }
 

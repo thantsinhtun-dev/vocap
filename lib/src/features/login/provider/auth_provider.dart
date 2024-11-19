@@ -16,18 +16,37 @@ class AuthController extends _$AuthController {
     return AuthInitialState();
   }
 
-  Future<void> googleLogin() async {
+  Future<void> googleLogin({
+    required Function() onSuccess,
+    required Function(String) onFailure,
+  }) async {
     var result = await _authRepository.googleLogin();
     result.match(
-      (error) => Logger.log(functionName: "login fail",msg: error.getErrorMessage()),
-      (success) => Logger.log(msg: "success ${success.toString()}"),
+      (error) {
+        Logger.log(functionName: "login fail", msg: error.getErrorMessage());
+        onFailure(error.getErrorMessage());
+      },
+      (success) {
+        Logger.log(msg: "success ${success.toString()}");
+        onSuccess();
+      },
     );
   }
-  Future<void> facebookLogin() async {
+
+  Future<void> facebookLogin({
+    required Function() onSuccess,
+    required Function(String) onFailure,
+  }) async {
     var result = await _authRepository.facebookLogin();
     result.match(
-          (error) => Logger.log(functionName: "login fail",msg: error.getErrorMessage()),
-          (success) => Logger.log(msg: "success ${success.toString()}"),
+      (error) {
+        Logger.log(functionName: "login fail", msg: error.getErrorMessage());
+        onFailure(error.getErrorMessage());
+      },
+      (success) {
+        Logger.log(msg: "success ${success.toString()}");
+        onSuccess();
+      },
     );
   }
 }

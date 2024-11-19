@@ -1,5 +1,6 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
+import 'package:vocap/data/datasource/local_datasource/preference_local_datasource.dart';
 import 'package:vocap/src/error/error_handler.dart';
 
 import '../../../data/datasource/remote_datasource/auth/auth_remote_datasource.dart';
@@ -11,11 +12,14 @@ import 'auth_repository_impl.dart';
 part 'auth_repository.g.dart';
 @riverpod
 AuthRepository authRepository(Ref ref) {
-  final authRemote = ref.watch(authRemoteDataSourceProvider);
-  return AuthRepositoryImpl(authRemote);
+  final _authRemote = ref.read(authRemoteDataSourceProvider);
+  final _local = ref.read(preferenceLocalDataSourceProvider);
+
+  return AuthRepositoryImpl(_authRemote,_local);
 }
+
 abstract class AuthRepository {
   ResultFuture<UserEntity> googleLogin();
   ResultFuture<UserEntity> facebookLogin();
-
+  Result<UserEntity?> getUserEntity();
 }

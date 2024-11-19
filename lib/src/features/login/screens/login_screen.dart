@@ -1,11 +1,15 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 import 'package:lottie/lottie.dart';
 import 'package:vocap/src/core/app_colors.dart';
 import 'package:vocap/src/core/app_fonts.dart';
 import 'package:vocap/src/core/app_images.dart';
 import 'package:vocap/src/core/dimens.dart';
+import 'package:vocap/src/extensions/ext_dialog.dart';
+import 'package:vocap/src/features/home/home_screen.dart';
+import 'package:vocap/src/features/splash/splash_screen.dart';
 import 'package:vocap/src/routes/app_route_data.dart';
 
 import '../../../core/app_animation.dart';
@@ -15,7 +19,7 @@ class LoginScreen extends ConsumerWidget {
   const LoginScreen({super.key});
 
   @override
-  Widget build(BuildContext context,WidgetRef ref) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
       body: SafeArea(
         child: Column(
@@ -36,9 +40,16 @@ class LoginScreen extends ConsumerWidget {
               titleColor: context.appColors.colorSecondaryText,
               bgColor: context.appColors.colorWhite,
               logo: AppImages.logoGoogle,
-              onPressed: ()  {
+              onPressed: () {
                 final authController = ref.read(authControllerProvider.notifier);
-                authController.googleLogin();
+                authController.googleLogin(
+                  onSuccess: () {
+                    HomeRoute().pushReplacement(context);
+                  },
+                  onFailure: (error) {
+                    context.showSnackBar(title: "Error!", msg: error);
+                  },
+                );
               },
             ),
             const SizedBox(height: kMarginMedium),
@@ -48,8 +59,15 @@ class LoginScreen extends ConsumerWidget {
               bgColor: context.appColors.colorBlue,
               logo: AppImages.logoFB,
               onPressed: () {
-                 final authController = ref.read(authControllerProvider.notifier);
-                 authController.facebookLogin();
+                final authController = ref.read(authControllerProvider.notifier);
+                authController.facebookLogin(
+                  onSuccess: () {
+                    HomeRoute().pushReplacement(context);
+                  },
+                  onFailure: (error) {
+                    context.showSnackBar(title: "Error!", msg: error);
+                  },
+                );
               },
             ),
             const SizedBox(height: kMarginExtraLarge),
@@ -81,7 +99,7 @@ class SocialLoginButton extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: kMarginLarge),
       child: MaterialButton(
-        onPressed: ()=> onPressed(),
+        onPressed: () => onPressed(),
         color: bgColor,
         height: 56,
         padding: const EdgeInsets.symmetric(

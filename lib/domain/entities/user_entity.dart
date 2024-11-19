@@ -15,6 +15,23 @@ class UserEntity {
     required this.token,
   });
 
+  factory UserEntity.fromJson(Map<String, dynamic> json) => UserEntity(
+        name: json["name"],
+        email: json["email"],
+        image: json["image"],
+        phoneNumber: json["phoneNumber"],
+        uid: json["uid"],
+        token: json["token"],
+      );
+
+  Map<String, dynamic> toJson() => {
+        "name": name,
+        "email": email,
+        "image": image,
+        "phoneNumber": phoneNumber,
+        "uid": uid,
+        "token": token,
+      };
 
   @override
   String toString() {
