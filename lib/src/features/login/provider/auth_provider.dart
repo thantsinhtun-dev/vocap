@@ -1,4 +1,5 @@
 import 'package:riverpod_annotation/riverpod_annotation.dart';
+import 'package:vocap/domain/entities/user/user_entity.dart';
 import 'package:vocap/src/utils/logger.dart';
 
 import '../../../../domain/repositories/auth_repository/auth_repository.dart';
@@ -11,9 +12,24 @@ class AuthController extends _$AuthController {
   late AuthRepository _authRepository;
 
   @override
-  FutureOr<AuthState> build() async {
-    _authRepository = ref.read(authRepositoryProvider);
+  AuthState build() {
+    _initProvider();
     return AuthInitialState();
+  }
+
+  _initProvider() {
+    _authRepository = ref.read(authRepositoryProvider);
+  }
+
+  Future<void> checkUserLogin({
+    required Function(UserEntity) onSuccess,
+    required Function(String) onFailure,
+  }) async {
+    var result = await _authRepository.getCurrentUser();
+    result.fold(
+      (error) => onFailure(error.getErrorMessage()),
+      (data) => onSuccess(data),
+    );
   }
 
   Future<void> googleLogin({

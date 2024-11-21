@@ -1,29 +1,43 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:lottie/lottie.dart';
-import 'package:vocap/src/core/app_animation.dart';
-import 'package:vocap/src/core/app_colors.dart';
-import 'package:vocap/src/core/app_fonts.dart';
-import 'package:vocap/src/routes/app_route.dart';
-import 'package:vocap/src/routes/app_route_data.dart';
+import 'package:vocap/src/features/login/provider/auth_provider.dart';
+import '../../core/app_colors.dart';
+import '../../core/app_animation.dart';
+import '../../core/app_fonts.dart';
+import '../../routes/app_route_data.dart';
 
-import '../login/screens/login_screen.dart';
-
-class SplashScreen extends StatefulWidget {
+class SplashScreen extends ConsumerStatefulWidget {
   const SplashScreen({super.key});
 
   @override
-  State<SplashScreen> createState() => _SplashScreenState();
+  ConsumerState createState() => _SplashScreenState();
 }
 
-class _SplashScreenState extends State<SplashScreen> {
+class _SplashScreenState extends ConsumerState<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    Future.delayed(const Duration(seconds: 2), ()  {
-      LoginRoute().pushReplacement(context);
+
+    Future.delayed(const Duration(seconds: 1), () {
+      print("init");
+      _initUserInfo();
     });
+  }
+
+  _initUserInfo() {
+    ref.read(authControllerProvider.notifier).checkUserLogin(
+          onSuccess: (_) {
+            print("success");
+            HomeRoute().pushReplacement(context);
+          },
+          onFailure: (_) {
+            print("error");
+
+            LoginRoute().pushReplacement(context);
+          },
+        );
   }
 
   @override

@@ -1,13 +1,16 @@
-
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:riverpod_annotation/riverpod_annotation.dart';
 
-import '../../src/utils/crypto_utils.dart';
-import 'auth_firebase.dart';
+import '../../../src/utils/crypto_utils.dart';
 
-class AuthFirebaseImpl extends AuthFirebase {
-  @override
+part 'auth_firebase.g.dart';
+@riverpod
+AuthFirebase authFirebase(Ref ref) => AuthFirebase();
+
+class AuthFirebase  {
   Future<UserCredential> googleLogin() async {
     final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
 
@@ -20,7 +23,6 @@ class AuthFirebaseImpl extends AuthFirebase {
     return await FirebaseAuth.instance.signInWithCredential(credential);
   }
 
-  @override
   Future<UserCredential> facebookLogin() async {
     final rawNonce = CryptoUtils.generateNonce();
     final nonce = CryptoUtils.sha256ofString(rawNonce);
@@ -37,4 +39,16 @@ class AuthFirebaseImpl extends AuthFirebase {
     );
     return await FirebaseAuth.instance.signInWithCredential(credential);
   }
+
+  User? getCurrentUser()  {
+    return FirebaseAuth.instance.currentUser;
+  }
+
+  Future<void> logout() async {
+    return await FirebaseAuth.instance.signOut();
+  }
+
+  // Future<UserCredential> reLogin(UserCredential credential) async {
+  //   return await FirebaseAuth.instance.revokeTokenWithAuthorizationCode()
+  // }
 }

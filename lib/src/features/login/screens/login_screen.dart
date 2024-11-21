@@ -1,18 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:go_router/go_router.dart';
 import 'package:lottie/lottie.dart';
-import 'package:vocap/src/core/app_colors.dart';
-import 'package:vocap/src/core/app_fonts.dart';
-import 'package:vocap/src/core/app_images.dart';
-import 'package:vocap/src/core/dimens.dart';
-import 'package:vocap/src/extensions/ext_dialog.dart';
-import 'package:vocap/src/features/home/home_screen.dart';
-import 'package:vocap/src/features/splash/splash_screen.dart';
-import 'package:vocap/src/routes/app_route_data.dart';
-
+import '../../../core/dimens.dart';
+import '../../../extensions/ext_dialog.dart';
+import '../../../core/app_colors.dart';
 import '../../../core/app_animation.dart';
+import '../../../core/app_fonts.dart';
+import '../../../core/app_images.dart';
+import '../../../routes/app_route_data.dart';
 import '../provider/auth_provider.dart';
 
 class LoginScreen extends ConsumerWidget {

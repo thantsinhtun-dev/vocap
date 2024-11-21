@@ -6,6 +6,8 @@ import '../../data/models/responses/general/general_response.dart';
 import '../utils/logger.dart';
 
 typedef ResultFuture<T> = Future<Either<ErrorHandler,T>>;
+typedef ResultStream<T> = Stream<Either<ErrorHandler,T>>;
+
 typedef Result<T> = Either<ErrorHandler,T>;
 
 class ErrorHandler implements Exception {

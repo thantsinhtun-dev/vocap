@@ -1,27 +1,30 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'auth_repository.dart';
+part of 'firestore_remote_datasource.dart';
 
 // **************************************************************************
 // RiverpodGenerator
 // **************************************************************************
 
-String _$authRepositoryHash() => r'073afa8c6801b5065128d5fc571b618d359e085e';
+String _$fireStoreRemoteDataSourceHash() =>
+    r'72276004c8f52547136f159c366709f0145c285d';
 
-/// See also [authRepository].
-@ProviderFor(authRepository)
-final authRepositoryProvider = AutoDisposeProvider<AuthRepository>.internal(
-  authRepository,
-  name: r'authRepositoryProvider',
+/// See also [fireStoreRemoteDataSource].
+@ProviderFor(fireStoreRemoteDataSource)
+final fireStoreRemoteDataSourceProvider =
+    AutoDisposeProvider<FireStoreRemoteDatasource>.internal(
+  fireStoreRemoteDataSource,
+  name: r'fireStoreRemoteDataSourceProvider',
   debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
       ? null
-      : _$authRepositoryHash,
+      : _$fireStoreRemoteDataSourceHash,
   dependencies: null,
   allTransitiveDependencies: null,
 );
 
 @Deprecated('Will be removed in 3.0. Use Ref instead')
 // ignore: unused_element
-typedef AuthRepositoryRef = AutoDisposeProviderRef<AuthRepository>;
+typedef FireStoreRemoteDataSourceRef
+    = AutoDisposeProviderRef<FireStoreRemoteDatasource>;
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, deprecated_member_use_from_same_package

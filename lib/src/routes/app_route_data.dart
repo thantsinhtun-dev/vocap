@@ -7,7 +7,7 @@ import '../features/home/home_screen.dart';
 import '../features/login/screens/login_screen.dart';
 import '../features/note_details/note_detail_screen.dart';
 import '../features/note_list/note_list_screen.dart';
-import '../features/profile/profile_screen.dart';
+import '../features/profile/screens/profile_screen.dart';
 import '../features/search_vocap/search_vocap_screen.dart';
 import '../features/splash/splash_screen.dart';
 part 'app_route_data.g.dart';

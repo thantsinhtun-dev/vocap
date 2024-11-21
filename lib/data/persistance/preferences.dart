@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:vocap/domain/entities/user_entity.dart';
+import 'package:vocap/domain/entities/user/user_entity.dart';
 
 part 'preferences.g.dart';
 
@@ -33,5 +33,9 @@ class AppPreferences {
   UserEntity? getUserEntity() {
     var userEntity = _prefs.getString(_prefUserEntity) ?? "";
     return userEntity.isEmpty ? null : UserEntity.fromJson(json.decode(userEntity));
+  }
+
+  void removeUserEntity() {
+    _prefs.remove(_prefUserEntity);
   }
 }

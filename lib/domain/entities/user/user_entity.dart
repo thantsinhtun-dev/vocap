@@ -5,14 +5,18 @@ class UserEntity {
   final String phoneNumber;
   final String uid;
   final String token;
+  bool isDarkMode;
+  bool autoSync;
 
-  const UserEntity({
+  UserEntity({
     required this.name,
     required this.email,
     required this.image,
     required this.phoneNumber,
     required this.uid,
     required this.token,
+    this.isDarkMode = false,
+    this.autoSync = false,
   });
 
   factory UserEntity.fromJson(Map<String, dynamic> json) => UserEntity(
@@ -22,6 +26,8 @@ class UserEntity {
         phoneNumber: json["phoneNumber"],
         uid: json["uid"],
         token: json["token"],
+        isDarkMode: json["isDarkMode"],
+        autoSync: json["autoSync"],
       );
 
   Map<String, dynamic> toJson() => {
@@ -31,6 +37,8 @@ class UserEntity {
         "phoneNumber": phoneNumber,
         "uid": uid,
         "token": token,
+        "isDarkMode": isDarkMode,
+        "autoSync": autoSync,
       };
 
   @override

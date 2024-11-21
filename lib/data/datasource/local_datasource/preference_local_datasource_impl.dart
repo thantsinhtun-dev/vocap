@@ -1,7 +1,6 @@
 
-import 'package:vocap/data/persistance/preferences.dart';
-import 'package:vocap/domain/entities/user_entity.dart';
-
+import '../../../domain/entities/user/user_entity.dart';
+import '../../persistance/preferences.dart';
 import 'preference_local_datasource.dart';
 
 class PreferenceLocalDataSourceImpl extends PreferenceLocalDataSource {
@@ -16,6 +15,11 @@ class PreferenceLocalDataSourceImpl extends PreferenceLocalDataSource {
   @override
   void setUserEntity(UserEntity entity) {
     _preferences.saveUserEntity(entity);
+  }
+
+  @override
+  void removeUserEntity() {
+    _preferences.removeUserEntity();
   }
 
 }

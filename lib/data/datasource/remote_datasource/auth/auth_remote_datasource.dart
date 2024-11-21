@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
-import 'package:vocap/data/network/auth_firebase.dart';
+import 'package:vocap/data/network/auth/auth_firebase.dart';
 import 'auth_remote_datasource_impl.dart';
 
 part 'auth_remote_datasource.g.dart';
@@ -15,5 +15,8 @@ AuthRemoteDataSource authRemoteDataSource(Ref ref) {
 abstract class AuthRemoteDataSource {
   Future<UserCredential> googleLogin();
   Future<UserCredential> facebookLogin();
+  User? getCurrentUser();
+  Future<void> userLogout();
+  // Future<UserCredential> updateToken();
 
 }
